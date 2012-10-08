@@ -9,40 +9,25 @@ package cawpos;
  * @author Ninja
  */
 public abstract class Product {
-    private String partName;
-    private String partNumber;
+    private String prodId;
     private String description;
     private double price;
     private final String UNDEFINED = "undefined";
     private DiscountStrategy discountStrategy;
     
-    public final double getDiscountInDollars() {
-        return discountStrategy.getDiscountInDollars(price);
+
+    public final String getProdId() {
+        return prodId;
     }
 
-    public final String getPartName() {
-        return partName;
-    }
-
-    public final void setPartName(final String partName) {
-        if(partName == null || partName.length() == 0) {
-            this.partName = UNDEFINED;
+    public final void setProdId(final String prodId) {
+        if(prodId == null || prodId.length() == 0) {
+            this.prodId = UNDEFINED;
         }
-        this.partName = partName;
+        this.prodId = prodId;
     }
 
-    public final String getPartNumber() {
-        return partNumber;
-    }
-
-    public final void setPartNumber(final String partNumber) {
-        if(partNumber == null || partNumber.length() == 0) {
-            this.partNumber = UNDEFINED;
-        }
-        this.partNumber = partNumber;
-    }
-
-    public final String getDescription() {
+   public final String getDescription() {
         return description;
     }
 
