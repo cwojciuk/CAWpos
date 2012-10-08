@@ -9,5 +9,5 @@ package cawpos;
  * @author Ninja
  */
 public interface DiscountStrategy {
-    public abstract double getDiscountInDollars(double price);
+    public abstract double getDiscountInDollars(double total);
 }

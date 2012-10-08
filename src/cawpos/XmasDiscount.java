@@ -8,6 +8,12 @@ package cawpos;
  *
  * @author Ninja
  */
-public class XmasDiscount {
+public class XmasDiscount implements DiscountStrategy{
+    private final double XMASDISCOUNT = .9;
+
+    @Override
+    public double getDiscountInDollars(double total) {
+        return total * XMASDISCOUNT;
+    }
     
 }

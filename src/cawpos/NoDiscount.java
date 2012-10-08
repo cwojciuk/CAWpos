@@ -8,6 +8,11 @@ package cawpos;
  *
  * @author Ninja
  */
-public class NoDiscount {
+public class NoDiscount implements DiscountStrategy{
+
+    @Override
+    public double getDiscountInDollars(double total) {
+        return total;
+    }
     
 }
