@@ -17,6 +17,14 @@ public class LineItem {
         this.p = p;
         this.quantity = quantity;
     }
+    public Product getItemProd(){
+        
+        return p;
+    }
+    
+    public int getQuantity(){
+        return quantity;
+    }
     public double getOrigPriceSubtotal(){
         return p.getPrice() * quantity;
     }

@@ -9,8 +9,8 @@ package cawpos;
  * @author Ninja
  */
 public class Receipt {
-    
-    private LineItem[] lineItems;
+   PrintReceipt pr;
+   private LineItem[] lineItems = new LineItem[0];
     
    public void addLineItem(Product product, int qty) {
         LineItem item = new LineItem(product, qty);
@@ -35,6 +35,9 @@ public class Receipt {
             discountedGrandTotal += item.getDiscPriceTotal();
         }
         return discountedGrandTotal;
+    }
+    public LineItem[] getLineItems(){
+        return lineItems;
     }
     
 }
