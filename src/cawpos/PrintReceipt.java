@@ -9,12 +9,13 @@ package cawpos;
  * @author Ninja
  */
 public class PrintReceipt {
-    public void Print(Receipt receipt){
+    public void Print(Receipt receipt, OutputStrategy outputStrategy){
         LineItem[] lineItems;
         lineItems = receipt.getLineItems();
+        String outputString = "";
         
         for(int i = 0;i < lineItems.length;i++){
-            System.out.println(lineItems[i].getItemProd().getProdId()
+            outputString += (lineItems[i].getItemProd().getProdId()
                     + "\t" + lineItems[i].getItemProd().getDescription()
                     + "\n    \t" + String.format("$%.2f",lineItems[i].getItemProd().getPrice())
                     + " x " + lineItems[i].getQuantity()
@@ -23,8 +24,9 @@ public class PrintReceipt {
                     + "\n    \t(" + String.format("$%.2f", lineItems[i].getItemProd().getDiscountStrategy().getDiscountInDollars(
                     lineItems[i].getItemProd().getPrice())*lineItems[i].getQuantity()) + ")\n");
         }
-        System.out.println("Total Before Discount:\t" + String.format("$%.2f",receipt.getTotalBeforeDiscount()));
-        System.out.println("Total After Discount:\t" + String.format("$%.2f", receipt.getTotalAfterDiscount()));
-        System.out.println("Total Saved:\t\t" + String.format("$%.2f", receipt.getTotalBeforeDiscount()-receipt.getTotalAfterDiscount()));
+        outputString += ("Total Before Discount:\t" + String.format("$%.2f",receipt.getTotalBeforeDiscount()));
+        outputString += ("Total After Discount:\t" + String.format("$%.2f", receipt.getTotalAfterDiscount()));
+        outputString += ("Total Saved:\t\t" + String.format("$%.2f", receipt.getTotalBeforeDiscount()-receipt.getTotalAfterDiscount()));
+        outputStrategy.print(outputString);
     }
 }
