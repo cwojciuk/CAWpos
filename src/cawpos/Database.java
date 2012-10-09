@@ -5,8 +5,10 @@
 package cawpos;
 
 /**
- *
  * @author cwojciuk
+ * Advanced Java Programming 152-135-10442-13
+ * Point of Sales Lab
+ * 10/9/2012
  */
 public class Database {
     Product[] products = {
@@ -17,4 +19,10 @@ public class Database {
         new Shoes("S934", "Nike Free Run 2.0", 89.99, new XmasDiscount()),
         new Necklace("N843", "Emerald Necklace", 225.75, new JewelryDiscount())
     };
+
+    public final Product[] getProducts() {
+        return products;
+    }
+    
+    
 }

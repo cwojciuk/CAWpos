@@ -1,21 +1,14 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package cawpos;
 
-/**
- *
- * @author Ninja
+/** 
+ * @author Chuck Wojciuk
+ * Advanced Java Programming 152-135-10442-13
+ * Point of Sales Lab
+ * 10/9/2012
  */
 public class CashRegister {
     Receipt receipt = new Receipt();
-    PrintReceipt pr = new PrintReceipt();
-    DiscountStrategy outputStrategy;
-    /*
-     * Creation of "Database" with product values
-     * used to check items being sent in by the user
-     */
+
     
     ///////////////////////////////////////////////////////////////////
     /**
@@ -44,13 +37,7 @@ public class CashRegister {
         }
         
     }
-    ///////////////////////////////////////////////////////////////////
-    /**
-     * End of addItemToSale
-     */
-    ///////////////////////////////////////////////////////////////////
-    
-    
+   
     ///////////////////////////////////////////////////////////////////
     /**
      * This method returns a Receipt object that contains the ItemList
@@ -65,5 +52,8 @@ public class CashRegister {
      */
     public final void outputToConsole(){
         pr.Print(getReceipt(),new OutputConsole());
+    }
+    public final createNewReceipt(){
+        
     }
 }
