@@ -15,11 +15,17 @@ public abstract class Product {
     private final String UNDEFINED = "undefined";
     private DiscountStrategy discountStrategy;
     
-
+    /**
+     * 
+     * @return Product ID of the product object that was created
+     */
     public final String getProdId() {
         return prodId;
     }
-
+    /**
+     * sets the productID of a product object
+     * @param prodId 
+     */
     public final void setProdId(final String prodId) {
         if(prodId == null || prodId.length() == 0) {
             this.prodId = UNDEFINED;
@@ -27,10 +33,14 @@ public abstract class Product {
         this.prodId = prodId;
     }
 
+    /**
+     * 
+     * @return description of a product object
+     */
    public final String getDescription() {
         return description;
     }
-
+   
     public final void setDescription(final String description) {
         // No need to validate, optional
         this.description = description;

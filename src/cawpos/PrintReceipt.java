@@ -25,6 +25,6 @@ public class PrintReceipt {
         }
         System.out.println("Total Before Discount:\t" + String.format("$%.2f",receipt.getTotalBeforeDiscount()));
         System.out.println("Total After Discount:\t" + String.format("$%.2f", receipt.getTotalAfterDiscount()));
-        System.out.println("Recieved a Discount of:\t" + String.format("$%.2f", receipt.getTotalBeforeDiscount()-receipt.getTotalAfterDiscount()));
+        System.out.println("Total Saved:\t\t" + String.format("$%.2f", receipt.getTotalBeforeDiscount()-receipt.getTotalAfterDiscount()));
     }
 }
