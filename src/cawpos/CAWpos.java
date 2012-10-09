@@ -16,7 +16,6 @@ public class CAWpos {
     public static void main(String[] args) {
         
         CashRegister cr = new CashRegister();
-        PrintReceipt pr = new PrintReceipt();
         
         cr.addItemToSale("A101", 5);
         cr.addItemToSale("B205", 12);
@@ -24,6 +23,6 @@ public class CAWpos {
         cr.addItemToSale("R432",5);
         cr.addItemToSale("S934", 12);
         
-        pr.Print(cr.getReceipt());
-    }
+        cr.printButton();
+     }
 }

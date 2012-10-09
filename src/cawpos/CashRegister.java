@@ -10,7 +10,7 @@ package cawpos;
  */
 public class CashRegister {
     Receipt receipt = new Receipt();
-    
+    PrintReceipt pr = new PrintReceipt();
     /*
      * Creation of "Database" with product values
      * used to check items being sent in by the user
@@ -55,5 +55,11 @@ public class CashRegister {
      */
     public Receipt getReceipt(){
         return receipt;
+    }
+    /**
+     * Makes a call to 
+     */
+    public final void printButton(){
+        pr.Print(getReceipt());
     }
 }
