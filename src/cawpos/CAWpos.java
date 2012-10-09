@@ -22,6 +22,7 @@ public class CAWpos {
         cr.addItemToSale("B205", 12);
         cr.addItemToSale("C222", 8);
         cr.addItemToSale("R432",5);
+        cr.addItemToSale("S934", 12);
         
         pr.Print(cr.getReceipt());
     }

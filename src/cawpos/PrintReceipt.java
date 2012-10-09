@@ -12,6 +12,7 @@ public class PrintReceipt {
     public void Print(Receipt receipt){
         LineItem[] lineItems;
         lineItems = receipt.getLineItems();
+        
         for(int i = 0;i < lineItems.length;i++){
             System.out.println(lineItems[i].getItemProd().getProdId()
                     + "\t" + lineItems[i].getItemProd().getDescription()
@@ -22,5 +23,8 @@ public class PrintReceipt {
                     + "\n    \t(" + String.format("$%.2f", lineItems[i].getItemProd().getDiscountStrategy().getDiscountInDollars(
                     lineItems[i].getItemProd().getPrice())*lineItems[i].getQuantity()) + ")\n");
         }
+        System.out.println("Total Before Discount:\t" + String.format("$%.2f",receipt.getTotalBeforeDiscount()));
+        System.out.println("Total After Discount:\t" + String.format("$%.2f", receipt.getTotalAfterDiscount()));
+        System.out.println("Recieved a Discount of:\t" + String.format("$%.2f", receipt.getTotalBeforeDiscount()-receipt.getTotalAfterDiscount()));
     }
 }
